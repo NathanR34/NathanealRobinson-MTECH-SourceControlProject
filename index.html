@@ -9,6 +9,34 @@
     <div id="main-content">
         <h1>Welcome</h1>
         <p id="dev-notes">Developer branch changes</p>
+        <p id="changing-element"></p>
     </div>
+    <script>
+        function runChange(){
+            let elm = document.getElementById("changing-element");
+            let text = "...";
+            let state = 0;
+            let pend = 0;
+            let pendTime = 5;
+            let length = 10;
+            function update(){
+                if(pend<=-0) {
+                    if(state >= length) state=0;
+                    let loopNum = Math.max(text.length + state - length, 0);
+                    elm.innerText = 
+                        text.slice(text.length-loopNum, text.length)
+                        + " ".repeat(state-loopNum) 
+                        + text.slice(0, text.length-loopNum)
+                        + " ".repeat(Math.max(length-text.length-state, 0));
+                    state++;
+                    pend = pendTime;
+                }
+                pend--;
+                requestAnimationFrame(update);
+            }
+            update();
+        }
+        runChange();
+    </script>
 </body>
 </html>

@@ -9,3 +9,7 @@
     background-color: grey;
     color: lightskyblue;
 }
+#changing-element {
+    white-space: pre;
+    color: darkslategray;
+}
