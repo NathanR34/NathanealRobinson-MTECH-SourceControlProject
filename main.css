@@ -1,3 +1,11 @@
 #main-content {
     background-color: lightgray;
 }
+#dev-notes {
+    background-color: greenyellow;
+    color: green;
+}
+#dev-notes:hover {
+    background-color: grey;
+    color: lightskyblue;
+}
